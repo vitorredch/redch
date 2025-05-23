@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil - REDCH</title>
+    <link rel="stylesheet" href="/styles/loja.css"> <!-- Conectando ao CSS -->
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Logo da REDCH" class="rotating-image">
+        <div class="header__hamburger">
+            <div class="hamburger-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>Meu perfil</h1>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'perfil')">Meu Perfil</button>
+            <button class="tab-button" onclick="openTab(event, 'compras')">Minhas Compras</button>
+            <button class="tab-button" onclick="openTab(event, 'endereco')">Meu Endereço</button>
+            <button class="tab-button" onclick="openTab(event, 'cartoes')">Meus Cartões</button>
+            <button class="tab-button" onclick="openTab(event, 'amados')">O que eu amei</button>
+        </div>
+
+        <section class="user-profile">
+            <div id="perfil" class="tab-content active">
+                <div class="info-field">
+                    <strong>Nome:</strong>
+                    <input type="text" placeholder="Digite seu nome" class="input-field">
+                </div>
+                <div class="user-photo">
+                    <strong>Foto:</strong>
+                    <img src="[URL da Foto]" alt="Foto do Usuário">
+                    <input type="url" placeholder="URL da foto" class="input-field">
+                </div>
+                <div class="info-field">
+                    <strong>Cadastro:</strong>
+                    <input type="text" placeholder="Data de Cadastro" class="input-field">
+                </div>
+                <div class="info-field">
+                    <strong>Endereço:</strong>
+                    <input type="text" placeholder="Digite seu endereço" class="input-field">
+                </div>
+                <div class="info-field">
+                    <strong>Compras Passadas:</strong>
+                    <input type="text" placeholder="Listagem de Compras" class="input-field">
+                </div>
+            </div>
+            
+            <div id="compras" class="tab-content">
+                <h2>Minhas Compras</h2>
+                <p>Aqui você pode visualizar suas compras anteriores.</p>
+            </div>
+            
+            <div id="endereco" class="tab-content">
+                <h2>Meu Endereço</h2>
+                <p>Gerencie seus endereços cadastrados.</p>
+            </div>
+
+            <div id="cartoes" class="tab-content">
+                <h2>Meus Cartões</h2>
+                <p>Gerencie seus cartões de crédito e débito.</p>
+            </div>
+
+            <div id="amados" class="tab-content">
+                <h2>O que eu amei</h2>
+                <p>Veja os produtos que você marcou como favoritos.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-options">
+            <a href="/contato.html">Contato</a>
+            <a href="/sobre.html">Saiba Mais</a>
+        </div>
+        <p>&copy; 2024 REDCH. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="/scripts/meu-perfil.js"></script>
+</body>
+</html>

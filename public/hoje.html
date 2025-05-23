@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoje - REDCH</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    
+    <!-- Importação da Fonte Alata -->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    
+    <!-- CSS global -->
+    <link rel="stylesheet" href="/styles/style.css">
+    
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="/styles/hoje.css">
+
+    <style>
+        /* Corpo com gradiente e fonte personalizada */
+        body {
+            background: url('/images/loja-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(14, 3, 3);
+            font-family: 'Alata', sans-serif; /* Fonte Alata aplicada */
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        /* Estilos específicos para a página Hoje */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        /* Animação fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Logo da REDCH" class="rotating-image">
+        <div class="header__hamburger">
+            <div class="hamburger-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="off-canvas-menu">
+            <a href="#" class="close-menu">&times;</a>
+            <ul>
+                <li><a href="/">Página Principal</a></li>
+                <li><a href="/historia.html">História</a></li>
+                <li><a href="/hoje.html">Hoje</a></li>
+                <li><a href="/albuns.html">Álbuns</a></li>
+                <li><a href="/servicos.html">Serviços</a></li>
+                <li><a href="/contato.html">Contato</a></li>
+                <li><a href="/sobre.html">Sobre</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h1>Hoje</h1>
+        <p>Conteúdo sobre o hoje da REDCH.</p>
+    </main>
+
+    <footer>
+        <div class="footer-options">
+            <a href="/">Página Principal</a>
+            <a href="/historia.html">História</a>
+            <a href="/hoje.html">Hoje</a>
+            <a href="/albuns.html">Álbuns</a>
+            <a href="/servicos.html">Serviços</a>
+            <a href="/contato.html">Contato</a>
+            <a href="/sobre.html">Sobre</a>
+            <a href="/blog.html">Blog</a>
+        </div>
+        <p>&copy; 2024 REDCH. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

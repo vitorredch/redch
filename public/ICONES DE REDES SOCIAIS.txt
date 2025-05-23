@@ -1,0 +1,16 @@
+<li>
+                        <img src="/images/tiktok-icon.png" alt="TikTok" class="social-icon"> TIKTOK
+                    </li>
+                    <li>
+                        <img src="/images/instagram-icon.png" alt="Instagram" class="social-icon"> INSTAGRAM
+                    </li>
+                    <li>
+                        <img src="/images/facebook-icon.png" alt="Facebook" class="social-icon"> FACEBOOK
+                    </li>
+                    <li>
+                        <img src="/images/pinterest-icon.png" alt="Pinterest" class="social-icon"> PINTEREST
+                    </li>
+                    <li>
+                        <img src="/images/youtube-icon.png" alt="YouTube" class="social-icon"> YOUTUBE
+                    </li>
+                </ul>

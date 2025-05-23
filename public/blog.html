@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - REDCH</title>
+    <link rel="stylesheet" href="/styles/blog.css">   <!-- CSS Específico -->
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <style>
+        /* Estilos do Modal */
+        .modal {
+            display: none; /* Começa oculto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(17, 16, 16, 0.845); /* Fundo escurecido */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px; /* Ajustado para melhor visualização */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Logo da REDCH" class="rotating-image">
+        <div class="header__hamburger">
+            <div class="hamburger-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="off-canvas-menu">
+            <a href="#" class="close-menu">&times;</a>
+            <ul>
+                <li><a href="/">Página Principal</a></li>
+                <li><a href="/historia.html">História</a></li>
+                <li><a href="/loja.html">Loja</a></li>
+                <li><a href="/hoje.html">Hoje</a></li>
+                <li><a href="/albuns.html">Álbuns</a></li>
+                <li><a href="/servicos.html">Serviços</a></li>
+                <li><a href="/contato.html">Contato</a></li>
+                <li><a href="/sobre.html">Sobre</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h1>Blog</h1>
+        <p>Bem-vindo ao blog da REDCH. Aqui você encontrará as últimas atualizações e notícias.</p>
+            <div class="card-1">
+                <button aria-label="Clique para saber mais sobre como começar a usar o Mac." type="button" class="card-cta-modal-button">
+                    <div class="card-cta-modal-button-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="card-cta-modal-button-small-icon">
+                            <path d="M17.25,8.51H11.5V2.75A1.5,1.5,0,0,0,10,1.25h0a1.5,1.5,0,0,0-1.5,1.5V8.5H2.75a1.5,1.5,0,0,0,0,3H8.5v5.75a1.5,1.5,0,0,0,1.5,1.5h0a1.5,1.5,0,0,0,1.5-1.5V11.5h5.75a1.5,1.5,0,0,0,0-3Z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="card-2">
+                <button aria-label="Clique para saber mais sobre como começar a usar o Mac." type="button" class="card-cta-modal-button">
+                    <div class="card-cta-modal-button-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="card-cta-modal-button-small-icon">
+                            <path d="M17.25,8.51H11.5V2.75A1.5,1.5,0,0,0,10,1.25h0a1.5,1.5,0,0,0-1.5,1.5V8.5H2.75a1.5,1.5,0,0,0,0,3H8.5v5.75a1.5,1.5,0,0,0,1.5,1.5h0a1.5,1.5,0,0,0,1.5-1.5V11.5h5.75a1.5,1.5,0,0,0,0-3Z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="card-3">
+                <button aria-label="Clique para saber mais sobre como começar a usar o Mac." type="button" class="card-cta-modal-button">
+                    <div class="card-cta-modal-button-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="card-cta-modal-button-small-icon">
+                            <path d="M17.25,8.51H11.5V2.75A1.5,1.5,0,0,0,10,1.25h0a1.5,1.5,0,0,0-1.5,1.5V8.5H2.75a1.5,1.5,0,0,0,0,3H8.5v5.75a1.5,1.5,0,0,0,1.5,1.5h0a1.5,1.5,0,0,0,1.5-1.5V11.5h5.75a1.5,1.5,0,0,0,0-3Z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Informações sobre como começar a usar o Mac.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-options">
+            <a href="/">Página Principal</a>
+            <a href="/contato.html">Contato</a>
+            <a href="/sobre.html">Sobre</a>
+        </div>
+        <p>&copy; 2024 REDCH. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para o modal e menu -->
+    <script src="/scripts/blog.js"></script>
+</body>
+</html>

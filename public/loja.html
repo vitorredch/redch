@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - REDCH</title>
+    <link rel="stylesheet" href="./styles/loja.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Logo da REDCH" class="rotating-image">
+    </header>
+
+    <div class="top-bar">
+        <div class="menu-items">
+            <div class="menu-item">
+                <a href="#">COLEÇÃO</a>
+                <div class="tab">2024</div>
+                <div class="dropdown dropdown-colecao">
+                    <h2 class="dropdown-title"></h2>
+                    <a href="#" class="dropdown-link">TONS DA ESTAÇÃO</a>
+                    <a href="#" class="dropdown-link">REDCH now</a>
+                    <img src="/images/exemplo-colecao.png" alt="Imagem da Coleção" class="dropdown-image">
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">STYLIST</a>
+                <div class="tab"></div>
+                <div class="dropdown dropdown-stylist">
+                    <h2 class="dropdown-title">Stylist</h2>
+                    <a href="#" class="dropdown-link">MINHA PALETA</a>
+                    <a href="#" class="dropdown-link">TRABALHO</a>
+                    <a href="#" class="dropdown-link">COMEMORAÇÕES</a>
+                    <a href="#" class="dropdown-link">DATE DOS SONHOS</a>
+                    <a href="#" class="dropdown-link">UM DRINK</a>
+                    <a href="#" class="dropdown-link">NO Style</a>
+                    <video controls loop class="dropdown-video">
+                        <source src="/videos/exemplo-stylist.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição de vídeo.
+                    </video>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">INSPIRAÇÕES</a>
+                <div class="tab"></div>
+                <div class="dropdown dropdown-inspiracoes">
+                    <h2 class="dropdown-title">Inspirações</h2>
+                    <a href="#" class="dropdown-link">VIBRAÇÕES</a>
+                    <a href="#" class="dropdown-link">CLIMAX</a>
+                    <a href="#" class="dropdown-link">ILUMINAÇÃO</a>
+                    <img src="/images/exemplo-inspiracoes.jpg" alt="Imagem Inspirações" class="dropdown-image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de pesquisa -->
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar...">
+            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-icons">
+            <div class="icon-item">
+                <img src="/images/user-icon.png" alt="Ícone de Usuário" class="header-icon">
+                <div class="dropdown dropdown-usuario">
+                    <h2 class="dropdown-title">Usuário</h2>
+                    <input type="text" class="login-input" placeholder="Usuário">
+                    <input type="password" class="login-input" placeholder="Senha">
+                    <button class="login-button" id="login-button">Login</button>
+                    <p class="forgot-password">Esqueci minha senha</p>
+                    <p class="back-to-login"><a href="#" class="dropdown-link" id="link-cadastro">Cadastre-se</a></p>
+                    
+                    <!-- Formulário de Cadastro -->
+                    <div class="dropdown-cadastro" style="display:none;">
+                        <h2 class="dropdown-title">Cadastro</h2>
+                        <input type="text" class="cadastro-input" placeholder="Nome">
+                        <input type="text" class="cadastro-input" placeholder="E-mail">
+                        <input type="password" class="cadastro-input" placeholder="Senha">
+                        <input type="password" class="cadastro-input" placeholder="Confirmar Senha">
+                        <button class="cadastro-button" id="cadastrar">Cadastrar</button>
+                        <p class="back-to-login"><a href="#" class="dropdown-link" id="link-login">Voltar ao Login</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="icon-item">
+                <img src="/images/cart-icon.png" alt="Ícone de Sacola" class="header-icon">
+                <div class="dropdown dropdown-sacola">
+                    <h2 class="dropdown-title">Sacola</h2>
+                    <ul id="cart-items">
+                        <li>Produto 1</li>
+                        <li>Produto 2</li>
+                    </ul>
+                    <p>Total: R$<span id="cart-total">100,00</span></p>
+                    <button id="clear-cart" class="login-button">Limpar Sacola</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Cards -->
+    <section class="product-cards">
+        <div id="card-1" class="card">
+            <img src="images/imagem1.png" class="card-image" alt="Imagem do Card 1">
+        </div>
+        <div id="card-2" class="card">
+            <img src="images/imagem2.png" class="card-image" alt="Imagem do Card 2">
+            <div class="card-title">Título do Card 2</div>
+            <div class="card-description">Descrição do Card 2</div>
+        </div>
+        <div id="card-3" class="card">
+            <img src="images/imagem3.png" class="card-image" alt="Imagem do Card 3">
+            <div class="card-title">Título do Card 3</div>
+            <div class="card-description">Descrição do Card 3</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-options">
+            <div class="footer-section">
+                <strong>AJUDA</strong>
+                <ul>
+                    <li>REDCH</li>
+                    <li>ARTIGOS E TAMANHOS</li>
+                    <li>PRESENTE</li>
+                    <li>ENVIOS E FRETE</li>
+                    <li>PAGAMENTOS E FATURA</li>
+                    <li>MINHAS COMPRAS</li>
+                    <li>TROCAS, DEVOLUÇÕES E REEMBOLSO</li>
+                    <li>PRE-Owned MY Redch</li>
+                    <li>EXPERIÊNCIAS</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <strong>MARCA A GENTE</strong>
+                <ul>
+                    <li>
+                        <img src="TikTok" class="social-icon"> TIKTOK
+                    </li>
+                    <li>
+                        <img src="Instagram" class="social-icon"> INSTAGRAM
+                    </li>
+                    <li>
+                        <img src="Facebook" class="social-icon"> FACEBOOK
+                    </li>
+                    <li>
+                        <img src="Pinterest" class="social-icon"> PINTEREST
+                    </li>
+                    <li>
+                        <img src="YouTube" class="social-icon"> YOUTUBE
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <strong>CLIENTE</strong>
+                <ul>
+                    <li>LOGIN</li>
+                    <li>CADASTRE-SE</li>
+                    <li>MINHAS COMPRAS</li>
+                    <li>RECLAMAÇÃO</li>
+                    <li>ATENDIMENTO</li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 REDCH. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./scripts/loja.js"></script>
+    <script>
+        // Lógica de Login
+        document.getElementById('login-button').addEventListener('click', function() {
+            const usuario = document.querySelector('.login-input').value;
+            const senha = document.querySelector('.login-input[type="password"]').value;
+            
+            // Simulação de login
+            if (usuario === "usuario" && senha === "senha") {
+                document.getElementById('menu-perfil').style.display = 'block';
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Usuário ou senha inválidos.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Corpo com gradiente e fonte personalizada */
+body {
+    background: url('/images/blog-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(14, 3, 3);
+    font-family: 'Afacad', sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade-in effect quando a página carrega */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para o header e o menu */
+header {
+    background: #a0a55354;
+    backdrop-filter: blur(15px);
+    padding: 26px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+}
+
+/* Alinhamento do logo e do menu */
+header .rotating-image {
+    position: absolute;
+    right: 30px; /* Alinha o logo no lado direito da tela */
+    width: 30px;
+    height: auto;
+    animation: spin 8s linear infinite;
+}
+
+/* Estilos para o Menu Hambúrguer */
+.header__hamburger {
+    position: absolute;
+    top: auto;
+    left: 1px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    z-index: 1001; /* Garante que o botão hambúrguer fique acima do menu off-canvas */
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 27px;
+    position: relative;
+}
+
+.hamburger-icon div {
+    width: 100%;
+    height: 2px;
+    background-color: #62671a;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon .line1 {
+    top: 0;
+}
+
+.hamburger-icon .line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-icon .line3 {
+    bottom: 0;
+}
+
+/* Efeito de cruzamento dos traços ao abrir o menu */
+.header__hamburger.active .line1 {
+    transform: rotate(45deg) translate(-2px, -2px);
+    top: 50%;
+    transform-origin: 50%;
+}
+
+.header__hamburger.active .line2 {
+    opacity: 0;
+}
+
+.header__hamburger.active .line3 {
+    transform: rotate(-45deg) translate(0px, 0px);
+    bottom: 50%;
+    transform-origin: 50%;
+}
+
+/* Menu suspenso que aparece levemente abaixo e ao lado dos traços */
+.off-canvas-menu {
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    width: 225px;
+    background: rgba(255, 255, 255, 0.579); /* Fundo mais transparente para ver o efeito */
+    backdrop-filter: blur(20px); /* Aumente o desfoque */
+    -webkit-backdrop-filter: blur(20px); /* Safari */
+    color: rgba(6, 5, 5, 0.85); /* Texto com leve transparência */
+    font-weight: 500;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda bem sutil */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para realismo */
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1000;
+}
+
+/* Quando o menu estiver aberto */
+.off-canvas-menu.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+
+.off-canvas-menu.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.off-canvas-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.off-canvas-menu ul li {
+    margin: 10px 0;
+}
+
+.off-canvas-menu ul li a {
+    color: #62671a;
+    text-decoration: none;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.3s ease;
+    transform: translateY(10px);
+}
+
+.off-canvas-menu ul li a.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.off-canvas-menu ul li a:hover {
+    color: #62671a;
+}
+
+/* Estilo do footer */
+footer {
+    position: relative;
+    text-align: right;
+    padding: 50px;
+    background: #c8d48d;
+    color: #fff;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Botão de fechar o menu */
+.off-canvas-menu .close-menu {
+    display: block;
+    font-size: 24px;
+    color: #aaaaaa00;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001; /* Garante que o botão de fechar fique acima do menu */
+}
+
+.off-canvas-menu .close-menu:hover {
+    color: #000;
+}
+
+/* Estilo dos botões de chamada para ação do modal */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a linha seguinte se necessário */
+    gap: 20px; /* Espaçamento entre os botões */
+    justify-content: center; /* Alinha os botões ao centro do contêiner */
+    margin: 20px; /* Espaçamento externo do contêiner */
+}
+
+.card-cta-modal-button {
+    position: relative;
+    cursor: pointer;
+    border-radius: 21px;
+    z-index: 9;
+    width: 350px;
+    height: 200px;
+    background-color: #0e0e0e84;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px outset var(--finish-space-gray);
+    padding: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 0px solid #0e0e0e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do botão quando o mouse passa sobre ele */
+.card-cta-modal-button:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Estilo do ícone dentro do botão modal */
+.card-cta-modal-button-icon {
+    --scrim-background-color: #f7f7f5;
+    --scrim-hover-background-color: #ffffff;
+    --scrim-active-background-color: rgb(14, 3, 3);
+    --icon-color: #060505;
+    --icon-interaction-color: #060505;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    outline: none;
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    bottom: 20px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 100ms linear, color 100ms linear;
+    background-color: var(--scrim-background-color);
+    color: var(--icon-color);
+}
+
+.card-cta-modal-button-icon:hover {
+    background-color: var(--scrim-hover-background-color);
+}
+
+.card-cta-modal-button-icon:active {
+    background-color: var(--scrim-active-background-color);
+    color: var(--icon-interaction-color);
+}
+
+.card-cta-modal-button-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Reseta estilo do botão padrão */
+button {
+    background: none;
+    border: 0;
+    box-sizing: initial;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: inherit;
+    overflow: visible;
+    vertical-align: inherit;
+}
+
+/* Estilo dos cards */
+.card-container {
+    display: 250px;
+    flex-wrap: wrap;
+    gap: 300px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.card {
+    width: 350px;
+    height: 600px;
+    background-color: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: 250px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-cta-modal-button-icon {
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #f7f7f5;
+    color: #060505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 100ms linear, color 100ms linear;
+}
+
+.card-cta-modal-button-icon:hover {
+    background-color: #ffffff;
+}
+
+.card-cta-modal-button-icon:active {
+    background-color: rgb(14, 3, 3);
+    color: #060505;
+}
+
+/* Reseta estilo do botão padrão */
+button {
+    background: none;
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Estilo geral dos cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Estilo do card 1 */
+.card-1 {
+    width: 350px;
+    height: 600px;
+    background-image: url('/images/card1-background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card-1:hover {
+    transform: scale(1.05);
+}
+
+.card-1 .card-cta-modal-button-icon {
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Estilo do card 2 */
+.card-2 {
+    width: 350px;
+    height: 600px;
+    background-image: url('/images/card2-background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card-2:hover {
+    transform: scale(1.05);
+}
+
+.card-2 .card-cta-modal-button-icon {
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Estilo do card 3 */
+.card-3 {
+    width: 350px;
+    height: 600px;
+    background-image: url('/images/card3-background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card-3:hover {
+    transform: scale(1.05);
+}
+
+.card-3 .card-cta-modal-button-icon {
+    right: 20px;
+    bottom: 20px;
+}
+
+/* Estilo do botão dentro do card */
+.card-cta-modal-button-icon {
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    background-color: #f7f7f5;
+    color: #060505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 100ms linear, color 100ms linear;
+}
+
+.card-cta-modal-button-icon:hover {
+    background-color: #ffffff;
+}
+
+.card-cta-modal-button-icon:active {
+    background-color: rgb(14, 3, 3);
+    color: #060505;
+}

@@ -1,0 +1,281 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Corpo com gradiente e fonte personalizada */
+body {
+    background: url('/images/footer-background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(14, 3, 3);
+    font-family: 'Afacad', sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Fade-in effect quando a página carrega */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para o header e o menu */
+header {
+    background: #660d0d44;
+    backdrop-filter: blur(15px);
+    padding: 26px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Alinhamento do logo e do menu */
+header .rotating-image {
+    position: absolute;
+    right: 30px; /* Alinha o logo no lado direito da tela */
+    width: 30px;
+    height: auto;
+    animation: spin 8s linear infinite;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #ffffff4e;
+    text-decoration: none;
+    padding: 30px 30px;
+    font-size: 50rem;
+    transition: 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background: rgba(10, 9, 9, 0.886);
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Espaço para conteúdo adicional */
+.media-section {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Estilo do footer */
+footer {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    background: #660d0d;
+    color: #fff;
+}
+
+.footer-options {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+}
+
+.footer-options a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5rem;
+}
+
+/* Estilos para o Menu Hambúrguer */
+.header__hamburger {
+    position: absolute;
+    top: auto;
+    left: 1px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 27px;
+    position: relative;
+}
+
+.hamburger-icon div {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(90, 7, 7, 0.9);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon .line1 {
+    top: 0;
+}
+
+.hamburger-icon .line2 {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-icon .line3 {
+    bottom: 0;
+}
+
+/* Efeito de cruzamento dos traços ao abrir o menu */
+.header__hamburger.active .line1 {
+    transform: rotate(45deg) translate(-2px, -2px);
+    top: 50%;
+    transform-origin: 50%; /* Garante que a rotação seja no centro */
+}
+
+.header__hamburger.active .line2 {
+    opacity: 0; /* Esconder a linha do meio */
+}
+
+.header__hamburger.active .line3 {
+    transform: rotate(-45deg) translate(0px, 0px);
+    bottom: 50%;
+    transform-origin: 50%; /* Garante que a rotação seja no centro */
+}
+
+/* Menu suspenso que aparece levemente abaixo e ao lado dos traços */
+
+.off-canvas-menu {
+    position: absolute;
+    top: 9px;
+    left: 40px;
+    background: rgba(90, 7, 7, 0.9);
+    color: #060505;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 50px;
+    border: 0px solid #0e0e0e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}   
+
+.off-canvas-menu.open {
+    display: flex;
+    transform: translateY(0); /* Move suavemente para a posição correta */
+    opacity: 1;
+}
+
+.off-canvas-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.off-canvas-menu ul li {
+    margin: 10px 0;
+}
+
+.off-canvas-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.3s ease;
+    transform: translateY(10px);
+}
+
+.off-canvas-menu ul li a.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.off-canvas-menu ul li a:hover {
+    color: #c0c0c0;
+}
+
+/* Estilos para o campo de pesquisa e o botão de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Fundo com transparência */
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaço abaixo do campo de pesquisa */
+}
+
+.search-input {
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    margin-right: 10px;
+    outline: none;
+    background: rgba(17, 16, 16, 0.3); /* Fundo com transparência */
+    color: #ffffff;
+}
+
+.search-button {
+    border: none;
+    background: rgba(90, 7, 7, 0.9); /* Fundo vermelho com transparência */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button svg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff; /* Cor da lupa */
+}
+
+/* Torna o ícone de fechamento do menu invisível */
+a.close.menu {
+    display: none; /* Oculta o ícone de fechamento do menu */
+}
+
+/* Botão de fechar o menu */
+.off-canvas-menu .close-menu {
+    display: block;
+    font-size: 24px;
+    color: #ffffff00;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.off-canvas-menu .close-menu:hover {
+    color: #ccc;
+}
+
+
